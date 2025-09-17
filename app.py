@@ -18,8 +18,8 @@ app.config["MONGO_URI"] = os.getenv("MONGO_URI")
 mongo = PyMongo(app)
 
 # Collections
-users = mongo.db.users
-contacts = mongo.db.contacts
+users = db.users
+contacts = db.contacts
 
 # ------------------ General Routes ------------------
 @app.route("/")
