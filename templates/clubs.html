@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Activities | KIET Activities & Clubs</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    /* Body and background */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      min-height: 100vh;
+      margin: 0;
+      padding-bottom: 40px;
+      background: url('https://t3.ftcdn.net/jpg/02/14/87/96/360_F_214879686_R3HFJlk6WLr1kcdvy6Q9rtNASKN0BZBS.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #1f1f1f !important;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.7rem;
+      color: #f9ca24 !important;
+      text-shadow: 1px 1px 3px #b38600;
+    }
+    .navbar-nav .nav-link {
+      color: #cfcfcf !important;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #f9ca24 !important;
+      text-shadow: 0 0 6px #f9ca24;
+    }
+
+    /* Main container styling */
+    .container {
+      max-width: 1000px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    h1.text-center {
+      font-weight: 800;
+      margin-bottom: 40px;
+      color: #f9ca24;
+      text-shadow: 1px 1px 8px #b38600;
+    }
+
+    /* Activity card */
+    .activity-card {
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+      transition: transform 0.3s ease;
+      color: #ddd;
+      background: #1f1f1f;
+      user-select: none;
+    }
+    .activity-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.9);
+    }
+    .activity-card img {
+      max-height: 180px;
+      object-fit: contain;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 2px solid #f9ca24;
+      background: #1f1f1f;
+      padding: 8px;
+      width: 100%;
+    }
+    .btn-link {
+      color: #f9ca24;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-link:hover {
+      text-decoration: underline;
+      color: #ffd54f;
+    }
+    .card-body {
+      background: #333;
+      color: #eee;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      box-shadow: inset 0 0 10px rgba(255, 202, 36, 0.2);
+      padding: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .activity-card {
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">KIET Activities & Clubs</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">LOGIN</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('about') }}">ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('activities') }}">ACTIVITIES</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('clubs') }}">CLUBS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('contact') }}">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Activities Content -->
+  <div class="container">
+    <h1 class="text-center">CLUBS AT KIET</h1>
+    <div class="row g-4">
+
+      <!-- GCC Club -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="activity-card">
+          <img src="https://media.licdn.com/dms/image/v2/D560BAQEdNp5niau0Rw/company-logo_200_200/company-logo_200_200/0/1683745552013?e=2147483647&v=beta&t=_aZWsVKmdXjwuABqnHdc-DnHvLrZJxHfSQjtkJ_qzhM">
+          <div class="card-body">
+            <p>The Google Cloud Club at KIET promotes cloud computing and modern technologies.</p>
+            <a href="{{ url_for('gcc') }}" class="btn btn-link">More Details</a>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Khub -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="activity-card">
+          <img src="data:image/jpeg;base64,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" >
+          <div class="card-body">
+            <p>K-Hub is an innovation hub fostering creativity and new ideas among students.</p>
+            <a href="{{ url_for('khub') }}" class="btn btn-link">More Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toastmasters -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="activity-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7KlBrsrMrK4Z8c9rqk2jg_HYn6KNjSLV6Xw&s">
+          <div class="card-body">
+            <p>The Toastmasters Club helps students develop public speaking and leadership skills.</p>
+            <a href="{{ url_for('toastmaster') }}" class="btn btn-link">More Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- robotics -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="activity-card">
+          <img src="data:image/jpeg;base64,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">
+          <div class="card-body">
+            <p>The Robotics Club focuses on building and programming robots for competitions and learning.</p>
+            <a href="{{ url_for('robotics') }}" class="btn btn-link">More Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart City -->
+      <div class="col-md-6 col-lg-4 text-center">
+        <div class="activity-card">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABsFBMVEX///8AAAD//v////3///z8/Pzf39+qqqra2tr9///w8PD19fWIiIji4uL5+fm5zTmUlJS7u7u6urqurq7CwsImJibNzc3u//8OkNvs7OyBgYFPT09oaGgvLy////i0yjuYvD9gYGCenp6AsEJvb2+SkpI7Ozt5eXltbW3n+/8AmeHB0Tr///GsxC2fwD2QuT5ISEg5OTlYWFjh//8QrfbC6/MAitchISEXFxez3fGV0O8AqPcQrPMIoeoAm+lbn9IAg9MAe8N+t9QAic+Uwd8AbboAY7D6/ulyqkPU7PS+4O6Pz+89r+Mypdtdt9pYuuh1yvTJ9vo+s+6o4vFOpttopcs3ntma3vJ7wd2C0vF+yPBevuw/ksgFltVZo8ler96z7vYmgsJclMkAdbTN5PMzebGAsdEPcLerzuMAb8KcvdkpcrB5pM70+cXh6KXS2oMAV6UYZab1987J2G/G0lHg56y3yF2brcO0x2mAj6y9yNvR3qCEuMzT4KvV4ZG3zISUtEmivGeOuCnc58KJq1WdunC81J+sxozC1rBtoytelzGKrWHe69JnnERUlDJfmEtitOfbAAARY0lEQVR4nO2cjV8SWxrHjzODMiCkgLylqORLEr7kC5m8CCGipbdS81pqrG1F3b1lV7P1rutLmpm97P2X93nOOQNDaffWrsn4Ob9Kh2EYznee13MYIkRISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEjIIJKIKnPBI5X+PFtSgZFIACbLqqoi8VkTQAGYhCIM9eyJOyhukbNoQwg9k6p7eGZsWABBvxy/qum6SmRJT6mZV/38BGUv4ADrERn+KeRGIso14cGMA38kvAiSR5OiGs17VYw+lVlGlofi/bH+/lg82j+h0uKhqCrYVu6YnJqcjE3FYj+piuGMiOWBsDKoAiEARm/2TUQnEF1V0E/BbB2x6K3b9Cmj8cm0CrIIUxW0YTQei05NTyGhpJrUoVt3fxqQlY5Y/60BQxJiGKrk6gxqQEUbxkNxEMShKiuyencqClTTckcsFgMHjsdvGi4MIdI67sx6Q4lEYuaaRxkKJaZ/TjBCMO34bD8ItjviuBGbvncTEpJqrDoikzterzeEiKEhMpQITQ8l0IoT4+Pj6gCCRfsXPeClmIAGbtxUMdVIEKAGEdaIGe/sDSCEv3MEbBhKxBOUMeEdH4hHp27F+ieBELw1FqVeKmHhNFQ45iI/qQtgx4SXEcYTEwMTCUg5ISScUyeiYMOp6PzPPNNg8ZQMQwjphMxEvIteKiD0grcmcn0TkHESifGBUD8Uwf5ZD8Th3b5YfwwIZVNHR4fHOKGIhAiXzuUKhOipicTcNHhpCJNOlMZhDEMRCJXxxanY3GmP+5s0HPF6I+m+gQgQjni9QzQoE6G7t9NImIjGYlqmid2dBy8dT0T7p+7duzckGyWpDkciEW/EG2I29A5MQ2alqZXZEASEs4g41ffzT6o8Hqe0/fNQaU577H9Nw8nF+15KSW2YTmvVAwkTs5PxBBKCt/b3T8bQS2ltjPfPq4axYRJyaQRFCUGzc7MJjXDOMxmlhFA2oGJMXCVIGIv13bqpGAQQCNP3l9KRdCR5jYxEkDCn5qDL8QKhNzF5bxFtGErcUGejiEiYl07Pz8tGWOjAsjacSiYj6TQnBG/1prF65OYiSIhCwnhsKg6tKSMEl41HgdAAPSrMDIEQsFJ9A0lGmMtRO0Z+7ksBYahAGIdGZ2oqDoSJu3SaMW8EE3LCVDKdGh5mNkwCKg3GxUWwYTqE5ZERQk7tuxqlhH+DqUZsXpEN0NmgFYBwKRUBT00hYXphEbIqM+P4QCSxmA6FgNAbQhvmJqkNoQ2IgZcqRliswiE+SN1RF5LpZAoJwWMhJIe9nDDtvdY3yzJNaBb78QQQQkzG4tPzNxUj9N+4gvEgtTCylEIhYRIQc+Q+/GSEuWmaS72JG55FnHVwG8b75m4aYsGREWrihJH0MGTW2RnINNjQQW4FQu/kHG0DZtCGCVwKuCkbgRBXth/kAS4/MJ2nhKmFpXQ6mY5Epj1/RxvSttzTkQ5ho7MYQkLv/A2wYiJnkL4UCQExP3KN2TB1ewBSKxAu5MCGaZpyloAQW7nFviEkhEKCqdVANsxkRvOpDGA+RsI7d2hijcAPSgh5lRKG4M9IjtowRCMyZyDC4b6lp/lMKg+E+WQSkuoSEkbAhqnI/YHFCLMhmjHBCKEJmJvJGYIP+7YHmQcPH2XAVTNICOUfqscwZhxKeK1vgRHO9aGjetFLoQsIeeZyxjAhCL00Q8UIU7x6LD0dvw7lEXwWCSO5qzTtICE4bGhyETKNAeohkdBL8/lM/skvSPhLJpXJoBmTqaG+fMdAis6qKCFtySNA+DAym8PCkTPGB+EStWE+P3r1CSV8mhm4nqHF8c5I/s59nHZE0qnbt6HR8UbSAyORGXI9edWDqwA52Qh9KSUcHR3NZ0ZHM5BpfslnRh4/hbSTyTzNp5aWFhaW0GHzS2jDSHr6GhJGFmcwInPEMDYcffTkHzwOwVWhdCwNjzx52OFRVbxlQfV0PLw6MrzAup00EtJ4DBnEhgQJhz2PKOGdJ/8YffTrk3E1kH229nxreXl1eXV1eev52rNsQB2/+nghmQRCbOW8aTI3YwwbYrUYHX3xG/pl5sVvj4Fu5fnqy8bOc+cu6fVydWsloD4cSaeuQU4FxtzsjCGW2mjnDXEIYTg6+utDkn222tjZ2XhOJx3m6lqWXB/+exKNGIkYw4aqpFDC0dHffu0IrCwjHtPRjOeWnwU6HqexckRyxrhrQaaEL1782hFee1XA+xrky+fhjmupiBci0gAmJDQOX7x4MB74gu8zyFLG8TvJyLAhCDEOH/32kABfYxfqa5BFzJdr5PrSTLnP8fF+IAzDf/6uZtc7uzQ1NjLKTp2OsOTqiufxE6JIpJw/LMW+WVZ//5ey0VWixq7Ozq5Xy1trz5jWtrB6MMxLBchzz5Un/1Zlk1S+M31ZlqAp+d2XXS/hA2u+2ljJhgO6cSvh7MrWy8+DcjU7/otHIuV7cwZ+6uD5p7rStFtC+ApqHnua3asos2iDgM0+f9V5Se+sjc88TzySUrY2VGXF/i95c7epqaupwLe9ItObpORiNZc5LWzSgqm35HP1uqeMy75kcge2u7ubuLq6djayRIOTCzcjFn/iBzHZrZLkuhx4qJbtPFhSbYHt3e7uAuN2lt3jhhHKbnWT+A3DzGEJKy7Z5c5zBcpLy2FfuQKiRba7NTV1r6/QGzNoUNG7FZkNZb6gRm/sI8y+K1A8NchLW+VbFFUS3ikSbgTYSFWeXkqHjTcJ4d1eCjNleAvaH87YGD6Nwf8VgUWyFzTAnT0WfwreoaigX4ZX1ja21kHLW1trK2E0IL3BnfkqWWmkjPh3pVyNCPYIa4Svs0Rhn+dSGwU+bqzzBKtVkvXNlQDURcqnIGP2VSdr6V6Gy7apgZHyONwOs5u82Zcsspuvm3YBr6lJXyY7u9bXWKZVWaaFhEObu63yrRbQlIZfd1/ovoCAtEBIYMfs250mXQHRM3a+2shK0MjizB4uT3gZJiOdq2UbhgRLvqTsHbzdC0i89CkksLEDabW7wNhVitnZtREGa/PiGHi2tfUsgO5+yiDHqVDTaRWgpW6vmFwLdvzMWV+tsGMLTU/Z8qEwP+Ld3YSxBja6P9MRlNSM2LQrROtYy5WRFTjWwaD9pOw+xGQJ4O7ubhP8+8xVd9ezLOUW/p02yrEqttaSKknZNxdAOr717Xd7qM3tdSTUQb5aKTar5YtXIgmqPwVERsTc2d4LF8cuh/e2m3a7ipw7WWKEpVK9ZHJweEFD7H6zmS1+zYl/TS+7saMLyK3THOz3SFXl1wXAnc0wbcu1ia3CvvlEwhs7XVoJWT/d8X67IKnuc8DDfTqHwiTLvzMr8X4buoHX3IxAWLZLF8dIIZvcS98GCPuymraKQZ9m6RbqCasdu5tl24seJ5kE9hFxbA8f0GmvrE33JTqlUukXaOXN7t3upt3twGkP+FulgIkCbz+82d/DBVC8ubm0jNNt2tspe693Xm+GDfGZjF58XQYXEBVc4ZVxLhj4+HZ7f39/+91HtBiakAajEgY/Ltc25ngpqkqtxr9nCXzZgx0emd2HOwdZrYnlti3nhe4jJWG+lPj6hUT5Dgv1kXYB21lCF7cl+qV9wzkpoV/2leiXLekkeO/N4YWxCyV6gzmIkWEZkYyGqBMY6t0YUwni4TtiuFbtaKlS9j3D+4zxMGu04DtGCnl3ODZWsOKYzogG9ky9VD3h4eHhmM5Nz4YNVfLxPef78Hbv497bDzwkDz+e9tD+T4Jssk+N+GGP9WYByKxAeHhgkBtm/1yyHD749P79hyydQyk4p/hwePjpIGy06cQxYveqZT9msTJQJgU/HP0IFV85G8WCTihUbYIRRjJVYR9YnBEf1eZM9CMm9NaDgMSWVGXDfKHyT4SLjPx/UDp4P/Zp7P0BtZ9a3uuG3ySGAY1n9tPYp09jY5/CRvtvIv6SZEkh2f98Qsb32TNjPJ3oJ1GBP6gN/whI0tkzIiUk7/6DeodJ5ozUQr3ohP7dH398eKeczf+5jS/dKGEF1xWNPN8VEhISEvoLsjrrG+rqGlpqTd99CovDYdY/rmztraur66mGnfSkbofDAr/MDofvfxvrd8lVoannu9/eDK8uIlpaCqdsttM9/oqKBvhVVVFRZ/+fB/w9g9PU8L0nqYQXV2kPrFd0p2yju4CwwkcJK8zHnuSk1Azv2m62Whx1sOH8zpOUEPZSfwg6q/DUFdW4y1VVFbQywsr/y6i/QSZ40/N0y1fYIsTuDlYHXRA6ttrWaqduULC/usqt8zRrpdnOCGtsNnYIcjnopgO2Bq147kp6DiSsrYTT+sxmMzuawJblRAmtg/wyw4XuaeOEQe5nVTygejmj+TJ7fMXBX+3qhZfbGGFFxUW6rx22gvx59E43+93MCamjYGjU0SPwHU6W0F7BB6FTMVEURKPHV3zMXlFPtwuEjBuvjmZkU9Dvx0OrGQcjxHzWxn9b4Xf9iQIScp5FjblYKqib1dT66XAuOx3nNfdF6/hd9Il67XGRsJ0Z2nLUmHWEQWqxKh70mMhrT5jQrZnlopMXCz+3WZWWXZu5J7lcLmo7MF0v/LLhq5qDQV9JprFVFNz+SEJ2HXz8Ovh5oJ6onEXf8xMONIi/0RqtuOGo0Cd5a+0gIwwWA05HaNaFYUE6Qn4idAxwm4aTd1KQxVk/yBFb+JvTLICENbhRWwg8c2szSzZIiFeCB9xnhK2fv8WXhE56zsof4KRc5qqeQgb5gtDBn7CzzFLBbagdR0oIfQVf0OlLQuYg6AYn7qQFmRs40bGECNjQ7rC2Fgi1JkhHiMn5snZOi6PWgYH3JSGerA2bg4snzeU+39zrYps+niOOI8TH7fjY/zVCGmFa+UEbuY4mxCxqHmRPn6hsPKg4UfArhDZtfG2sfh9DSFMwcz3fFZ6FjyC0A10zSzcnLGxH/Tgga/2fxKGPY9QUr4SeUEugtIe47LISu6tOS146wkJ3warpiTspGz5U9HpW+clXCE044OZ2mkwtpYS0NPbwFFpbyEfakXrCwR6ePFkhPnEn5e+uyccJr5QQuvildxSOc5FSQivd284f6SrsoLnwHhYNik9gTPQSnLyTEkw2bDR11Sx6ehsaaDK0XGmoo65nqm+4Qp3L1UaPa7dpx7Vp56hta2ioKxSJSl5gG1p5Kaiua6BXr+ZyQ0Ohba/WfPgHyGeGfqyy0C6b7OzK2k0mk7ZLO7LSZrFr++DA4jkKr6Ky4hltxecKh5rshcNcP8hJT01WnML8+DUNlMkNs1K3tXQXsRyx/GD9ysqSHSu9xXbc0yymv2h+foyswWBFsKZk6NZe4nN8caC7zVnbU/XFbiYbTrjcxyI4ipntVIQZpLb+YquJWP31NX5ibSY2J3EFW7D/cdU3M6w2GKAJsq3vYnM7ZEpnc7MLX1ZPn/X1EhNxQ49URXe31tQTe2tzvbYi4qgYvHLefczb/wAhIQy93kZanFDOkdBcTZztxNJDfG120oJjM0HGdbQG7aTNRty9xA3ToB4fabCTIF2aGbxYX3++lbgvst0uO2mtIr4e/g4mq/V0YpALCYP+1l4b6YHM1wP9DiUERz1PXD1+v5/mQKiGPkuP3Y6j7iFVvf52vxlA69tx7D5s7OBFwWY4vJLgMfXtsPnjphJfFYzdcpnYL1eS1lari9nQT5xOYuohljYrqaYBFGy3WIOQDnvcxAGXoNdE/FY7VLheTEo+7HbBS91AClhIGKwhti+mjqckbGWqLrY6aojJWV17ntiriM1B3G5ighbA3N7Cy5izpaUWvM9a3dIKZnO1tIPzutpbaNNiwWiEF+FuIKatQ1VL9enlluPkbK2s+gHrDKcpt8P9Q3pHISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhIaGzqv8C+Ett4UGC/pEAAAAASUVORK5CYII=">
+         
+          <div class="card-body">
+            <p>The Smart City Club works on sustainable and innovative solutions for urban living.</p>
+            <a href="{{ url_for('smartcity') }}" class="btn btn-link">More Details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

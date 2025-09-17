@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KIET Activities & Clubs</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background: url('https://static.vecteezy.com/system/resources/thumbnails/002/375/040/small_2x/modern-white-background-free-vector.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .navbar {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      color: #f9ca24 !important;
+      font-weight: 700;
+      text-shadow: 1px 1px 4px #d35400;
+    }
+
+    .nav-link {
+      color: #ecf0f1 !important;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #f9ca24 !important;
+      text-shadow: 0 0 8px #f9ca24;
+    }
+
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      margin-top: 70px;
+    }
+
+    .main-heading {
+      font-weight: 900;
+      font-size: 3.5rem;
+      margin-bottom: 40px;
+      color: #f9ca24;
+      text-shadow: 4px 4px 15px #000, 0 0 30px #f1c40f, 0 0 50px #f39c12;
+      letter-spacing: 2px;
+    }
+
+    .logo {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 40px #f9ca24, 0 0 80px #f39c12;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 50px #f9ca24, 0 0 100px #f39c12;
+    }
+
+    .links {
+      margin-top: 30px;
+    }
+
+    .links a {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 15px;
+      text-decoration: none;
+      color: #f9ca24;
+      transition: color 0.3s ease;
+    }
+
+    .links a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #f9ca24;
+    }
+
+    @media (max-width: 576px) {
+      .main-heading {
+        font-size: 2rem;
+      }
+      .logo {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Main centered content -->
+  <div class="main-wrapper">
+    <h1 class="main-heading">WELCOME TO THE KIET ACTIVITIES & CLUBS</h1>
+    <img src="https://collegesamachar.com/uploads/colleges/logo/1648458657kiet.jpg" alt="KIET Logo" class="logo">
+
+    <!-- Register & Login Links -->
+    <div class="links">
+      <a href="{{ url_for('home') }}">Register</a> |
+      <a href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
