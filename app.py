@@ -1,14 +1,16 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_pymongo import PyMongo
 from werkzeug.security import generate_password_hash, check_password_hash
+import os
 
 # ------------------ Flask App Setup ------------------
 app = Flask(__name__)
-app.secret_key = "your_secret_key"   # Required for session management
+app.secret_key = "activities"   # Required for session management
 
 # ------------------ MongoDB Connection ------------------
 # Local MongoDB
-app.config["MONGO_URI"] = "mongodb+srv://kietactivities:Asha@098@cluster0.cmcf776.mongodb.net/college_activities"
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+#app.config["MONGO_URI"] = "mongodb+srv://kietactivities:Asha%40098@cluster0.cmcf776.mongodb.net/"
 
 # For MongoDB Atlas (Cloud), replace with your connection string:
 # app.config["MONGO_URI"] = "mongodb+srv://<username>:<password>@cluster0.mongodb.net/college_activities"
